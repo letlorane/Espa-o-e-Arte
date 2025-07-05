@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+}
+
+header {
+  background-color: #a3b18a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+header-conatiner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 90px; 
+  margin-left: 70%;
+}
+
+.logo span {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.logo small {
+  font-weight: normal;
+  font-size: 0.75em;
+  
+}
+
+.menu{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  margin-top: 60px;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-weight: 540;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* Linha animada no menu */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 1.2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+nav a:hover {
+  color: black;
+
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carrossel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.slide.ativo {
+  display: block;
+}
+
+.indicadores {
+  position: absolute;
+  bottom: 20px;
+  left: 90%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.bolinha {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3;
+}
+
+.bolinha.ativa {
+  background-color: #000;
+}
+
+.frase {
+  text-align: center;
+  padding: 50px;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  position: relative;
+  background-color: #a3b18a;
+  gap: 80px
+}
+
+.frase::before,
+.frase::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  height: 0.5px; 
+  background: black;
+  z-index: 0;
+}
+
+.frase::before{
+  left: 10%;
+}
+
+.frase::after {
+  right: 10%;
+}
+
+.frase span {
+  position: relative;
+  background-color: #a3b18a;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.moveis-planejados {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.conteudo {
+  flex: 1;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  margin-left: 80px;
+}
+
+.conteudo h2 {
+  font-family: "Lora", serif;
+  font-size: 32px;
+  font-weight: 540;
+  color: #000;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.conteudo p {
+  font-size: 16px;
+  line-height: 2.5;
+  color: #333;
+  margin-bottom: 40px;
+  max-width: 500px;
+  text-align: justify;
+  letter-spacing: 0.9px;
+}
+
+.btn-solicitar {
+  background-color: #69755B;
+  color: #fff;
+  padding: 14px 28px;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 17px;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.btn-solicitar:hover {
+  background-color: #566147;
+}
+
+.imagem {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .moveis-planejados {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .conteudo {
+    padding: 0;
+  }
+
+  .imagem {
+    margin-top: 30px;
+  }
+}
+
+.projeto-interiores{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #a3b18a;
+  padding: 0 60px;
+  height: 720px;
+}
+
+.projeto-interiores h3 { 
+  font-family: "Lora", serif;
+  font-size: 32px;
+  font-weight: 540;
+  color: #000;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 80px;
+  margin-top: 30px;
+}
+  
+.projeto-interiores p  {
+  font-size: 16px;
+  line-height: 1.0;
+  color: #333;
+  margin-bottom: 40px;
+  max-width: 500px;
+  text-align: justify;
+  letter-spacing: 0.9px;
+  margin-left: 80px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.slide {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.label {
+  position: absolute;
+  top: 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  top: 10px;
+  right: 10px;
+
+}
+
+.dots {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: #666;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
+.assessoria-em-obras {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.assessoria-em-obras .container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* altura total da tela */
+  margin: 0;
+  padding: 0;
+}
+
+.assessoria-em-obras h4{
+  font-family: "Lora", serif;
+  font-size: 32px;
+  font-weight: 540;
+  color: #000;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.assessoria-em-obras .imagem {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.assessoria-em-obras .imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.assessoria-em-obras .conteudo {
+  flex: 1;
+  background-color: #fff;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.diferenciais {
+  background-color: #a3b18a;
+  padding: 60px 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  padding: 60px 20px 30px;
+  border-radius: 12px;
+  width: 150px;
+  height: 100px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -20px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 0.5;
+  color: #000;
+   margin-top: 4px;
+
+}
+
+/* FORM */
+.contato {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.form-conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-contato {
+  flex: 1;
+  min-width: 300px;
+}
+
+.info-contato h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+  margin-bottom: 20px;
+}
+
+.info-contato p {
+  margin-bottom: 15px;
+  line-height: 3.6 !important;
+  word-spacing: 5px;
+  text-align: justify;
+
+}
+
+.formulario {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.formulario textarea {
+  resize: vertical;
+}
+
+.formulario button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #6B6E55;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #555844;
+}
+
+.info-contato p {
+  margin-bottom: 50px !important;
+  line-height: 1.6 !important;
+}
